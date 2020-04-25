@@ -1,5 +1,4 @@
 //Timer
-
 document.getElementById("quizBegins").addEventListener("click", function () {
   var secondsLeft = 60;
   var downloadTimer = setInterval(function function1() {
