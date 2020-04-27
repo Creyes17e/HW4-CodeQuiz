@@ -1,28 +1,37 @@
-//Timer
-document.getElementById("quizBegins").addEventListener("click", function () {
-  var secondsLeft = 60;
-  var downloadTimer = setInterval(function function1() {
-    document.getElementById("countdown").innerHTML = secondsLeft;
+//Variables
+const startBtn = document.getElementById("startBtn");
+const countdown = document.getElementById("countdown");
+// const quizEl = document.getElementById("quizEl");
 
+//Start Quiz
+// startBtn.addEventListener("click", startBtn);
+// function startQuiz() {
+//   startBtn.classList.add("hide");
+//   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+//   currentQuestionIndex = 0;
+//   quizEl.classList.remove("hide");
+// }
+
+// startBtn.addEventListener("click", function()
+// {
+
+// });
+
+//Timer
+startBtn.addEventListener("click", function () {
+  var secondsLeft = 60;
+  const setTimer = setInterval(function function1() {
+    countdown.innerHTML = secondsLeft;
     secondsLeft -= 1;
     if (secondsLeft <= 0) {
-      clearInterval(downloadTimer);
+      clearInterval(setTimer);
+      countdown.innerHTML = "Your time is up";
+      // return secondsLeft;
+      //only if they click start quiz again
     }
   }, 1000);
 });
 
-//Set Scores
-
-const questions = [
-  {
-    title: "What is the correct way to call a function?",
-    code: "",
-    choices: [
-      "console.long(function)",
-      "function()",
-      "print.function",
-      "document.function",
-    ],
-    answer: "function()",
-  },
-];
+console.log("setTime");
+console.log("startBtn");
+console.log("setTimer");
