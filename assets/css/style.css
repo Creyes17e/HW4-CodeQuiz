@@ -12,6 +12,50 @@ body {
   align-items: center;
 }
 
-.container {
+#quiz {
+  text-align: center;
   justify-content: center;
+}
+#quizEl {
+  justify-content: center;
+}
+#highscores {
+  text-align: center;
+  justify-content: center;
+}
+#timer {
+  text-align: center;
+  justify-content: center;
+}
+
+.questions {
+  text-align: center;
+}
+
+.choices {
+  justify-content: center;
+  text-align: center;
+}
+
+.choice {
+  border-style: solid;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: lightcoral;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.choice:hover {
+  cursor: pointer;
+  background-color: lightsteelblue;
+}
+#startBtn {
+}
+#startBtn:hover {
+  cursor: pointer;
+  background-color: lightsteelblue;
+}
+.highscoresBtn:hover {
+  cursor: pointer;
+  background-color: lightsteelblue;
 }
