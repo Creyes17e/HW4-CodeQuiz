@@ -17,35 +17,41 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 bg-secondary py-5">
-          <button><a href="highscores.html">View HighScores</a></button>
+        <div class="col-md-6 bg-secondary py-5" id="highscores">
+          <button class="highscoresBtn py-2">
+            <a href="highscores.html">View HighScores</a>
+          </button>
         </div>
-        <div class="col-md-6 bg-primary py-5">
-          <div id="countdown">
-            <div id="counter"></div>
-            <div id="btimeGauge"></div>
-            <div id="timeGauge"></div>
-          </div>
+        <div class="col-md-6 bg-primary py-5" id="timer">
+          <div id="countdown"></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 bg-info py-5">
-          <button id="quizBegins">Start Quiz</button>
-          <div id="quiz">
-            <div id="question"><p>question</p></div>
-            <div id="choices">
-              <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
-              <div class="choice" id="B" onclick="checkAnswer('B')">B</div>
+        <div class="col-md-12 bg-info py-5" id="quiz">
+          <div id="quizEl">
+            <div class="questions">
+              <h1>Javascript Quiz, test your knowledge!</h1>
+            </div>
+            <div class="choices" id="choices">
+              <div class="choice" id="A" onclick="checkAnswer('A')">
+                A
+              </div>
+              <div class="choice" id="B" onclick="checkAnswer('B')">
+                B
+              </div>
               <div class="choice" id="C" onclick="checkAnswer('C')">C</div>
               <div class="choice" id="D" onclick="checkAnswer('D')">D</div>
             </div>
+            <button id="startBtn">
+              Start Quiz
+            </button>
           </div>
         </div>
       </div>
     </div>
 
     <!--Javascript Links-->
-
+    <script src="./Assets/js/questions.js"></script>
     <script src="./Assets/js/script.js"></script>
   </body>
 </html>
