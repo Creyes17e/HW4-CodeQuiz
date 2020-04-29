@@ -20,6 +20,7 @@ body {
   text-align: center;
   justify-content: center;
   height: 20rem;
+  width: 80rem;
 }
 #quizEl {
   justify-content: center;
@@ -36,18 +37,21 @@ body {
 .questions {
   text-align: center;
 }
-
+#question {
+  font-size: larger;
+  font-weight: bold;
+}
 .choices {
   justify-content: center;
   text-align: center;
+  padding-top: 1.5rem;
 }
 
 .choice:hover {
   cursor: pointer;
   background-color: lightsteelblue;
 }
-#startBtn {
-}
+
 #startBtn:hover {
   cursor: pointer;
   background-color: lightsteelblue;
