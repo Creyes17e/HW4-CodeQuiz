@@ -10,11 +10,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
 
+.container {
+  margin-top: 5rem;
+}
 #quiz {
   text-align: center;
   justify-content: center;
+  height: 20rem;
 }
 #quizEl {
   justify-content: center;
@@ -37,14 +42,6 @@ body {
   text-align: center;
 }
 
-.choice {
-  border-style: solid;
-  width: 100%;
-  padding: 1.5rem;
-  background-color: lightcoral;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
 .choice:hover {
   cursor: pointer;
   background-color: lightsteelblue;
