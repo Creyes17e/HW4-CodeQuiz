@@ -15,41 +15,47 @@
     <link rel="stylesheet" href="./Assets/css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 bg-secondary py-5" id="highscores">
-          <button class="highscoresBtn py-2">
-            <a href="highscores.html">View HighScores</a>
-          </button>
-        </div>
-        <div class="col-md-6 bg-primary py-5" id="timer">
-          <div id="countdown"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 bg-info py-5" id="quiz">
-          <div id="quizEl">
-            <div class="questions">
-              <h1>Javascript Quiz, test your knowledge!</h1>
-            </div>
-            <div class="choices" id="choices">
-              <div class="choice" id="A" onclick="checkAnswer('A')">
-                A
-              </div>
-              <div class="choice" id="B" onclick="checkAnswer('B')">
-                B
-              </div>
-              <div class="choice" id="C" onclick="checkAnswer('C')">C</div>
-              <div class="choice" id="D" onclick="checkAnswer('D')">D</div>
-            </div>
-            <button id="startBtn">
-              Start Quiz
+    <!--Quiz Container-->
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 bg-secondary py-5" id="highscores">
+            <!--Highscores button to view highscores page-->
+            <button class="highscoresBtn py-2">
+              <a href="highscores.html">View HighScores</a>
             </button>
+          </div>
+          <div class="col-md-6 bg-primary py-5" id="timer">
+            <!--Timer (in seconds) displays here-->
+            <div id="timer"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 bg-info py-5" id="quiz">
+            <!--Information before beginning Quiz-->
+            <section id="intro">
+              <h1>Javascript Quiz, test your knowledge!</h1>
+              <p>Take this fun quiz about Javascript</p>
+              <button id="startBtn">
+                Start Quiz
+              </button>
+            </section>
+            <!--Quiz displays here-->
+            <div id="quizEl">
+              <!--Question-->
+              <div id="question"></div>
+              <!--Question Choices-->
+              <div class="choices" id="choices">
+                <div class="choice" id="1" onclick="checkAnswer('1')"></div>
+                <div class="choice" id="2" onclick="checkAnswer('2')"></div>
+                <div class="choice" id="3" onclick="checkAnswer('3')"></div>
+                <div class="choice" id="4" onclick="checkAnswer('4')"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
+    </main>
     <!--Javascript Links-->
     <script src="./Assets/js/questions.js"></script>
     <script src="./Assets/js/script.js"></script>
