@@ -9,20 +9,6 @@ const choice2 = document.getElementById("2");
 const choice3 = document.getElementById("3");
 const choice4 = document.getElementById("4");
 
-//Start Timer
-startBtn.addEventListener("click", startTimer);
-function startTimer() {
-  var secondsLeft = 60;
-  var setTimer = setInterval(function function1() {
-    timer.innerHTML = secondsLeft;
-    secondsLeft -= 1;
-    if (secondsLeft <= 0) {
-      clearInterval(setTimer);
-      timer.innerHTML = "Your time is up";
-    }
-  }, 1000);
-}
-
 //Questions
 const questions = [
   {
@@ -43,20 +29,13 @@ const questions = [
     choice4: "array",
     correct: "2",
   },
-  {
-    question: "Inside which HTML element do we put the JavaScript?",
-    choice1: "<javascript>",
-    choice2: "<js>",
-    choice3: "<scripting>",
-    choice4: "<script>",
-    correct: "4",
-  },
+
   {
     question: "Where is the correct place to insert a JavaScript",
     choice1: "Both the <head> section and the <body> section",
-    choice2: "The <body> section",
-    choice3: "The <head> section",
-    choice4: "The <title> section",
+    choice2: "The < body > section",
+    choice3: "The < head > section",
+    choice4: "The < title > section",
     correct: "2",
   },
   {
@@ -67,48 +46,82 @@ const questions = [
     choice4: "alertBox('You are the best!')",
     correct: "3",
   },
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    choice1: "< javascript >",
+    choice2: "< js >",
+    choice3: "< scripting >",
+    choice4: "< script >",
+    correct: "4",
+  },
 ];
 
 //Variables
-const lastQ = questions.length - 1;
-let currentQ = 0;
+const lastQuestion = questions.length - 1;
+let currentQuestion = 0;
 
 //Render Questions, the app will render a question and 4 ans choices
 function renderQuestion() {
-  let q = questions[currentQ];
+  let q = questions[currentQuestion];
   question.innerHTML = q.question;
   choice1.innerHTML = q.choice1;
   choice2.innerHTML = q.choice2;
   choice3.innerHTML = q.choice3;
   choice4.innerHTML = q.choice4;
 }
-console.log(questions);
+//Start Timer
+function startTimer() {
+  var secondsLeft = 60;
+  var setTimer = setInterval(function function1() {
+    timer.innerHTML = secondsLeft;
+    secondsLeft -= 1;
+    if (secondsLeft <= 0) {
+      clearInterval(setTimer);
+      timer.innerHTML = "Your time is up";
+    }
+  }, 1000);
+}
+function stopTimer() {
+  clearInterval(startTimer);
+}
 //Start Quiz
 startBtn.addEventListener("click", startQuiz);
 //After clicking start quiz a series of questions is displayed
 function startQuiz() {
   intro.style.display = "none";
+  startTimer();
   renderQuestion();
   quizEl.style.display = "block";
 }
+
+// //show progress
+// function showProgress() {
+//   var element = document.getElementById("progress");
+//   if (element) {
+//     answerIsCorrect = checkAnsChoice;
+//     element.innerHTML = "correct";
+//   }
+// }
+
 //Check Answers
 function checkAnsChoice(answer) {
-  if (answer == questions[currentQ].correct) {
+  if (answer == questions[currentQuestion].correct) {
     answerIsCorrect();
   } else {
     answerIsIncorrect();
   }
 
-  if (currentQ < lastQ) {
-    currentQ++;
+  if (currentQuestion < lastQuestion) {
+    currentQuestion++;
     renderQuestion();
   } else {
-    clearInterval(setTimer);
+    stopTimer();
   }
 }
+
 function answerIsCorrect() {
-  document.currentQ;
+  document.currentQuestion;
 }
 function answerIsIncorrect() {
-  document.currentQ;
+  document.currentQuestion;
 }
