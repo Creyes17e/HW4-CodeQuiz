@@ -16,8 +16,21 @@
   </head>
   <body>
     <div class="container">
-      <div id="progress"></div>
-      <div id="scoreContainer"></div>
+      <div class="row">
+        <div class="col-md-12 bg-primary">
+          <form id="highscoresubmit">
+            <h1 id="msg">All Done!</h1>
+            <p>
+              Insert your name initials to save your score.
+            </p>
+            <input placeholder="Name Initials" id="name" />
+            <button id="submit-btn">Submit</button>
+            <ul id="highscore-list">
+              <li id="0">CR 10 <button>Remove</button></li>
+            </ul>
+          </form>
+        </div>
+      </div>
     </div>
     <!--Javascript Links-->
     <script src="./Assets/js/script.js"></script>
