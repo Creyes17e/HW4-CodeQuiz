@@ -84,10 +84,16 @@ function startTimer() {
     if (secondsLeft === 0) {
       clearInterval(setTimer);
       timer.innerHTML = "Your time is up";
+      quizEnds();
     }
   }, 1000);
 }
 
+function quizEnds() {
+  scoreDiv.innerHTML = score;
+  quizEl.style.display = "none";
+  scoreDiv.style.display = "block";
+}
 //Start Quiz
 startBtn.addEventListener("click", startQuiz);
 //After clicking start quiz a series of questions is displayed
@@ -106,7 +112,7 @@ function checkAnsChoice(answer) {
     console.log(score);
   } else {
     answerIsIncorrect;
-    secondsLeft = secondsLeft - 5;
+    secondsLeft = secondsLeft - 10;
   }
 
   if (currentQuestion < lastQuestion) {
@@ -114,9 +120,7 @@ function checkAnsChoice(answer) {
     renderQuestion();
   } else {
     clearTimeout(setTimer);
-    scoreDiv.innerHTML = score;
-    quizEl.style.display = "none";
-    scoreDiv.style.display = "block";
+    quizEnds();
   }
 }
 
