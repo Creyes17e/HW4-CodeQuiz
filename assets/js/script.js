@@ -76,8 +76,9 @@ function renderQuestion() {
   choice4.innerHTML = q.choice4;
 }
 //Start Timer
+var setTimer;
 function startTimer() {
-  var setTimer = setInterval(function () {
+  setTimer = setInterval(function () {
     timer.innerHTML = secondsLeft;
     secondsLeft -= 1;
     if (secondsLeft === 0) {
@@ -112,6 +113,7 @@ function checkAnsChoice(answer) {
     currentQuestion++;
     renderQuestion();
   } else {
+    clearTimeout(setTimer);
     scoreDiv.innerHTML = score;
     quizEl.style.display = "none";
     scoreDiv.style.display = "block";
