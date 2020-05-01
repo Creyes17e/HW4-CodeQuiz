@@ -8,6 +8,9 @@ const choice1 = document.getElementById("1");
 const choice2 = document.getElementById("2");
 const choice3 = document.getElementById("3");
 const choice4 = document.getElementById("4");
+const scoreDiv = document.getElementById("scoreDiv");
+const highScores = JSON.parse(localStorage.getItem("scoreDiv  "));
+const highScoresSubmit = document.getElementById("highscoressubmit");
 
 //Questions
 const questions = [
@@ -59,6 +62,9 @@ const questions = [
 //Variables
 const lastQuestion = questions.length - 1;
 let currentQuestion = 0;
+var secondsLeft = 60;
+var setTimer;
+var score = 0;
 
 //Render Questions, the app will render a question and 4 ans choices
 function renderQuestion() {
@@ -71,51 +77,44 @@ function renderQuestion() {
 }
 //Start Timer
 function startTimer() {
-  var secondsLeft = 60;
-  var setTimer = setInterval(function function1() {
+  var setTimer = setInterval(function () {
     timer.innerHTML = secondsLeft;
     secondsLeft -= 1;
-    if (secondsLeft <= 0) {
+    if (secondsLeft === 0) {
       clearInterval(setTimer);
       timer.innerHTML = "Your time is up";
     }
   }, 1000);
 }
-function stopTimer() {
-  clearInterval(startTimer);
-}
+
 //Start Quiz
 startBtn.addEventListener("click", startQuiz);
 //After clicking start quiz a series of questions is displayed
 function startQuiz() {
-  intro.style.display = "none";
   startTimer();
+  intro.style.display = "none";
   renderQuestion();
   quizEl.style.display = "block";
 }
-
-// //show progress
-// function showProgress() {
-//   var element = document.getElementById("progress");
-//   if (element) {
-//     answerIsCorrect = checkAnsChoice;
-//     element.innerHTML = "correct";
-//   }
-// }
 
 //Check Answers
 function checkAnsChoice(answer) {
   if (answer == questions[currentQuestion].correct) {
     answerIsCorrect();
+    score++;
+    console.log(score);
   } else {
-    answerIsIncorrect();
+    answerIsIncorrect;
+    secondsLeft = secondsLeft - 5;
   }
 
   if (currentQuestion < lastQuestion) {
     currentQuestion++;
     renderQuestion();
   } else {
-    stopTimer();
+    scoreDiv.innerHTML = score;
+    quizEl.style.display = "none";
+    scoreDiv.style.display = "block";
   }
 }
 
