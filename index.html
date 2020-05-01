@@ -16,29 +16,29 @@
   </head>
   <body>
     <!--Quiz App Container-->
-    <main>
+    <main class="quizimage">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 bg-secondary py-2" id="highscoresCol">
+          <div class="col-md-3 py-2" id="highscoresCol">
             <!--Highscores button to view highscores page-->
-            <button class="highscoresBtn py-2">
+            <button class="highscoresBtn py-1 my-4">
               <a href="highscores.html">View HighScores</a>
             </button>
           </div>
-          <div class="col-md-6 bg-primary py-5" id="timer">
+          <div class="col-md-3 bg-primary py-5" id="timer">
             <!--Timer (in seconds) displays here-->
             <div id="timer"></div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 bg-info py-5" id="quiz">
+          <div class="col-md-6 bg-info py-5" id="quiz">
             <!--Information before beginning Quiz-->
             <section id="intro">
               <h1>Javascript Quiz, test your knowledge!</h1>
               <p>
                 Take this fun quiz about Javascript, answer correctly you will
-                get 1 point, answer incorrectly 5 seconds will deduct from the
-                timer. Good Luck
+                get 1 point, answer incorrectly 10 seconds will deduct from the
+                timer. Good Luck!
               </p>
               <button id="startBtn">
                 Start Quiz
@@ -46,7 +46,7 @@
             </section>
             <!--Quiz displays here-->
             <div id="scoreDiv" style="display: none;"></div>
-            <div class="quizEl" id="quizEl">
+            <div class="quizEl" id="quizEl" style="display: none;">
               <!--Question-->
               <div id="question"></div>
               <!--Question Choices-->
