@@ -9,8 +9,7 @@ const choice2 = document.getElementById("2");
 const choice3 = document.getElementById("3");
 const choice4 = document.getElementById("4");
 const scoreDiv = document.getElementById("scoreDiv");
-const highScores = JSON.parse(localStorage.getItem("scoreDiv  "));
-const highScoresSubmit = document.getElementById("highscoressubmit");
+const highScoreSubmit = document.getElementById("highscoresubmit");
 
 //Questions
 const questions = [
@@ -89,11 +88,6 @@ function startTimer() {
   }, 1000);
 }
 
-function quizEnds() {
-  scoreDiv.innerHTML = score;
-  quizEl.style.display = "none";
-  scoreDiv.style.display = "block";
-}
 //Start Quiz
 startBtn.addEventListener("click", startQuiz);
 //After clicking start quiz a series of questions is displayed
@@ -123,10 +117,21 @@ function checkAnsChoice(answer) {
     quizEnds();
   }
 }
-
+//Answer is correct or incorrect functions
 function answerIsCorrect() {
   document.currentQuestion;
 }
 function answerIsIncorrect() {
   document.currentQuestion;
 }
+
+//Quiz Ends
+function quizEnds() {
+  scoreDiv.innerHTML = "Your Score:" + "" + "" + score;
+  quizEl.style.display = "none";
+  scoreDiv.style.display = "block";
+  highScoreSubmit.style.display = "block";
+}
+
+//Highscores display in different HTML
+document.getElementById("highscoresText").innerHTML = window.location.search;
