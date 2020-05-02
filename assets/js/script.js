@@ -77,9 +77,10 @@ function renderQuestion() {
 //Start Timer
 var setTimer;
 function startTimer() {
+  timer.innerHTML = secondsLeft;
   setTimer = setInterval(function () {
-    timer.innerHTML = secondsLeft;
     secondsLeft -= 1;
+    timer.innerHTML = secondsLeft;
     if (secondsLeft === 0) {
       clearInterval(setTimer);
       timer.innerHTML = "Your time is up";
