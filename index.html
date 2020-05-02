@@ -16,7 +16,7 @@
   </head>
   <body>
     <!--Quiz App Container-->
-    <main class="quizimage">
+    <main>
       <div class="container">
         <div class="row">
           <div class="col-md-3 py-2" id="highscoresCol">
@@ -25,27 +25,45 @@
               <a href="highscores.html">View HighScores</a>
             </button>
           </div>
-          <div class="col-md-3 bg-primary py-5" id="timer">
+          <div class="col-md-3 py-5" id="timer">
             <!--Timer (in seconds) displays here-->
             <div id="timer"></div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 bg-info py-5" id="quiz">
+          <div class="col-md-6 py-5" id="quiz">
             <!--Information before beginning Quiz-->
             <section id="intro">
               <h1>Javascript Quiz, test your knowledge!</h1>
               <p>
-                Take this fun quiz about Javascript, answer correctly you will
-                get 1 point, answer incorrectly 10 seconds will deduct from the
-                timer. Good Luck!
+                Take this fun 5 question quiz about Javascript, answer correctly
+                you will get 1 point, answer incorrectly 10 seconds will deduct
+                from the timer. Good Luck!
               </p>
               <button id="startBtn">
                 Start Quiz
               </button>
             </section>
-            <!--Quiz displays here-->
+            <!--Highscores Form-->
             <div id="scoreDiv" style="display: none;"></div>
+            <form
+              id="highscoresubmit"
+              style="display: none;"
+              action="highscores.html"
+              method="GET"
+            >
+              <h1 id="msg">All Done!</h1>
+              <p>
+                Insert your name initials to save your score.
+              </p>
+              <input
+                type="text"
+                placeholder="Name Initials"
+                id="nameInitials"
+              />
+              <button id="submit-btn">Submit</button>
+            </form>
+            <!--Quiz displays here-->
             <div class="quizEl" id="quizEl" style="display: none;">
               <!--Question-->
               <div id="question"></div>
