@@ -34,11 +34,11 @@ const questions = [
 
   {
     question: "Where is the correct place to insert a JavaScript",
-    choice1: "Both the <head> section and the <body> section",
+    choice1: "Both the < head > section and the < body > section",
     choice2: "The < body > section",
     choice3: "The < head > section",
     choice4: "The < title > section",
-    correct: "2",
+    correct: "1",
   },
   {
     question: "How do you write 'You are the best!' in an alert box?",
