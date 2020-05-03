@@ -9,7 +9,7 @@ const choice2 = document.getElementById("2");
 const choice3 = document.getElementById("3");
 const choice4 = document.getElementById("4");
 const scoreDiv = document.getElementById("scoreDiv");
-const highScoreSubmit = document.getElementById("highscoresubmit");
+const highScoreSubmit = document.getElementById("highscores-submit");
 
 //Questions
 const questions = [
@@ -85,6 +85,10 @@ function startTimer() {
       clearInterval(setTimer);
       timer.innerHTML = "Your time is up";
       quizEnds();
+    } else if (secondsLeft <= 0) {
+      clearInterval(setTimer);
+      timer.innerHTML = "Your time is up";
+      quizEnds();
     }
   }, 1000);
 }
@@ -95,8 +99,8 @@ startBtn.addEventListener("click", startQuiz);
 function startQuiz() {
   startTimer();
   intro.style.display = "none";
-  renderQuestion();
   quizEl.style.display = "block";
+  renderQuestion();
 }
 
 //Check Answers
@@ -107,7 +111,7 @@ function checkAnsChoice(answer) {
     console.log(score);
   } else {
     answerIsIncorrect;
-    secondsLeft = secondsLeft - 10;
+    secondsLeft = secondsLeft - 15;
   }
 
   if (currentQuestion < lastQuestion) {
@@ -128,11 +132,72 @@ function answerIsIncorrect() {
 
 //Quiz Ends
 function quizEnds() {
-  scoreDiv.innerHTML = "Your Score:" + "" + "" + score;
+  scoreDiv.innerHTML = "Your Score:" + "" + score;
   quizEl.style.display = "none";
   scoreDiv.style.display = "block";
   highScoreSubmit.style.display = "block";
 }
 
+//Store High Scores
+
 //Highscores display in different HTML
-document.getElementById("highscoresText").innerHTML = window.location.search;
+
+// document.getElementById("user-initials").innerHTML = sessionStorage.getItem(
+//   "textvalue"
+// );
+var initials = document.querySelector("#name-initials");
+var yourScore = document.querySelector("#your-score");
+var submitBtn = document.querySelector("#submit-btn");
+var msgDiv = document.querySelector("#msg");
+var userInitialsSpan = document.querySelector("#user-initials");
+var userScoresSpan = document.querySelector("#user-score");
+var score = 0;
+
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
+}
+
+submitBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  var user = {
+    nameInitials: initials.value.trim(),
+    userScore: yourScore.value.trim(),
+  };
+  console.log(user);
+
+  //Validate the field
+  if (user.nameInitials === "" || user.userScore != score) {
+    displayMessage(
+      "error",
+      "You are receiving this error because name initials cannot be blank or your are inputting the incorrect score"
+    );
+  } else {
+    displayMessage("success", "Your highscore has been saved");
+    console.log(initials);
+    console.log(score);
+
+    //New Highscore Submission
+    localStorage.setItem("user", JSON.stringify(user));
+
+    //Most recent submission
+    var lastUser = JSON.parse(localStorage.getItem("user"));
+
+    userInitialsSpan.textContent = lastUser.nameInitials;
+    userScoresSpan.textContent = lastUser.userScore;
+  }
+});
+
+//1ST CODE
+
+// function displayScores() {
+//   form = display.getElementById("highscore-list");
+//   form.submit();
+//   form.action = "highscores.html";
+//   form.target = "";
+// }
+
+//  var user = {
+//    nameInitials: initials.value,
+//  };
