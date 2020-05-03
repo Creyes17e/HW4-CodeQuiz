@@ -71,8 +71,14 @@ body {
 #submit-btn:hover,
 .highscoresBtn:hover,
 #clearHighScores:hover,
-.choice:hover {
+.choice:hover,
+#goBackBtn:hover {
   cursor: pointer;
   background-color: lightsteelblue;
   color: black;
+}
+
+#msg {
+  font-size: 25px;
+  color: rgb(48, 0, 0);
 }
