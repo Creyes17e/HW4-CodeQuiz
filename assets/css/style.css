@@ -4,12 +4,7 @@
 }
 
 body {
-  --hue: var(--hue-neutral);
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: brown;
   background: url("../images/bgimage.jpeg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
