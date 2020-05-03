@@ -138,13 +138,7 @@ function quizEnds() {
   highScoreSubmit.style.display = "block";
 }
 
-//Store High Scores
-
-//Highscores display in different HTML
-
-// document.getElementById("user-initials").innerHTML = sessionStorage.getItem(
-//   "textvalue"
-// );
+//Highscores variables
 var initials = document.querySelector("#name-initials");
 var yourScore = document.querySelector("#your-score");
 var submitBtn = document.querySelector("#submit-btn");
@@ -153,6 +147,7 @@ var userInitialsSpan = document.querySelector("#user-initials");
 var userScoresSpan = document.querySelector("#user-score");
 var score = 0;
 
+//Storing Highscores
 function displayMessage(type, message) {
   msgDiv.textContent = message;
   msgDiv.setAttribute("class", type);
@@ -165,9 +160,9 @@ submitBtn.addEventListener("click", function (event) {
     nameInitials: initials.value.trim(),
     userScore: yourScore.value.trim(),
   };
-  console.log(user);
+  // console.log(user);
 
-  //Validate the field
+  //Validating user input
   if (user.nameInitials === "" || user.userScore != score) {
     displayMessage(
       "error",
@@ -175,8 +170,8 @@ submitBtn.addEventListener("click", function (event) {
     );
   } else {
     displayMessage("success", "Your highscore has been saved");
-    console.log(initials);
-    console.log(score);
+    // console.log(initials);
+    // console.log(score);
 
     //New Highscore Submission
     localStorage.setItem("user", JSON.stringify(user));
