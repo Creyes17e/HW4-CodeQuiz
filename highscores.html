@@ -16,17 +16,25 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 bg-primary" id="highscoresText">
-          <h1>Your Javascript Highscores</h1>
-          <ul id="highscore-list">
-            <li id="0">CR 5</li>
-          </ul>
+      <div class="row justify-content-center">
+        <div class="col-md-6" id="highscoresText">
+          <h1>Javascript Quiz Highscores</h1>
+
+          <button id="goBackBtn">
+            <a href="index.html">Go Back</a>
+          </button>
           <button id="clearHighScores">Clear Highscores</button>
         </div>
       </div>
     </div>
     <!--Javascript Links-->
     <script src="./Assets/js/script.js"></script>
+    <!-- <script>
+      var initials = document.getElementById("name-initials");
+
+      var initials = localStorage["varToPass"];
+      localStorage.removeItem("varToPass");
+      display(initials);
+    </script> -->
   </body>
 </html>
