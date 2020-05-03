@@ -188,16 +188,3 @@ submitBtn.addEventListener("click", function (event) {
     userScoresSpan.textContent = lastUser.userScore;
   }
 });
-
-//1ST CODE
-
-// function displayScores() {
-//   form = display.getElementById("highscore-list");
-//   form.submit();
-//   form.action = "highscores.html";
-//   form.target = "";
-// }
-
-//  var user = {
-//    nameInitials: initials.value,
-//  };
