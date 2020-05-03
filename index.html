@@ -21,8 +21,8 @@
         <div class="row justify-content-center">
           <div class="col-md-3 py-2" id="highscoresCol">
             <!--Highscores button to view highscores page-->
-            <button class="highscoresBtn py-1 my-4">
-              <a href="highscores.html">View HighScores</a>
+            <button class="highscoresBtn my-4">
+              <a href="highscores.html">View Highscores</a>
             </button>
           </div>
           <div class="col-md-3 py-5" id="timer">
@@ -34,20 +34,20 @@
           <div class="col-md-6 py-5" id="quiz">
             <!--Information before beginning Quiz-->
             <section id="intro">
-              <h1>Javascript Quiz, test your knowledge!</h1>
+              <h1>Javascript Quiz!</h1>
               <p>
                 Take this fun 5 question quiz about Javascript, answer correctly
-                you will get 1 point, answer incorrectly 10 seconds will deduct
-                from the timer. Good Luck!
+                you will get 1 point, answer incorrectly 15 seconds will deduct
+                from the timer. Good Luck!!
               </p>
               <button id="startBtn">
                 Start Quiz
               </button>
             </section>
             <!--Highscores Form-->
-            <div id="scoreDiv" style="display: none;"></div>
+
             <form
-              id="highscoresubmit"
+              id="highscores-submit"
               style="display: none;"
               action="highscores.html"
               method="GET"
@@ -56,13 +56,19 @@
               <p>
                 Insert your name initials to save your score.
               </p>
+              <div id="scoreDiv" style="display: none;"></div>
               <input
                 type="text"
                 placeholder="Name Initials"
-                id="nameInitials"
+                id="name-initials"
               />
-              <button id="submit-btn">Submit</button>
+              <input type="text" placeholder="Your Score" id="your-score" />
+              <input type="submit" id="submit-btn" value="Submit" />
+              <div id="msg"></div>
+              <span id="user-initials"></span>
+              <span id="user-score"></span>
             </form>
+
             <!--Quiz displays here-->
             <div class="quizEl" id="quizEl" style="display: none;">
               <!--Question-->
